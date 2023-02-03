@@ -4,6 +4,7 @@
 provider "registry.terraform.io/gavinbunney/kubectl" {
   version = "1.14.0"
   hashes = [
+    "h1:ItrWfCZMzM2JmvDncihBMalNLutsAk7kyyxVRaipftY=",
     "h1:gLFn+RvP37sVzp9qnFCwngRjjFV649r6apjxvJ1E/SE=",
     "h1:mX2AOFIMIxJmW5kM8DT51gloIOKCr9iT6W8yodnUyfs=",
     "zh:0350f3122ff711984bbc36f6093c1fe19043173fad5a904bce27f86afe3cc858",
@@ -43,6 +44,7 @@ provider "registry.terraform.io/hashicorp/kubernetes" {
   version = "2.15.0"
   hashes = [
     "h1:Gcy0a0uHLgHJdqs9le6S0f8zp3xpmHKxH48el5kT0iI=",
+    "h1:tnz+6mdJYhK6OZRmQMZJz3+cDHXNLK69q2Zwt1BG3tw=",
     "h1:wAdoEHV4gXntbTcKkva3AKQKt1+BZL9Bi+Z+RZjFYyc=",
     "zh:108011c33c0fc0b4d429d511bf97744b40b1ab261d51d413b3bffc8247369f26",
     "zh:3ac39669fa20b7e0430753c3023d8393348213a84c69a18dc75057761478cfcf",
@@ -62,19 +64,6 @@ provider "registry.terraform.io/hashicorp/kubernetes" {
 provider "registry.terraform.io/vmware-tanzu/carvel" {
   version = "0.11.0"
   hashes = [
-    "h1:HslYwK+G5J3IdsXMx0ZMU2p6g1Ef7aVfUtZZu4YYJsg=",
-    "h1:eZ1vBbOHZXncW/VMApPy48ILXqZq71BXpq8KhcN5HI4=",
-    "zh:3c30070314cd7da84da2d5a92727fb73b1df9d7b84741f6f546a371ee8888343",
-    "zh:47a956718197e8acc997a80723b341564c65650e7157ac3bc37fe87193421e26",
-    "zh:4c50d7039bb5ed10343428809ffb76eb2614a136009d346dcbc33fadc41f6e62",
-    "zh:5e51a8c5f6ce40e504245f650471aebcbe496eddb6e45d6fa39464cae1826fed",
-    "zh:6b0bbf211d430b82ccc0b48bb968a6774cb2cdf14857082f08b17cfba0001840",
-    "zh:6e2ff5f40826cac5c67426dbb1cbb7d87db8d159c086942e261d9408a3dd727b",
-    "zh:87e5131ffc9e49aa4f0870fce306741869d3db16182fce447a54f5c983ecd427",
-    "zh:aa62d835e25423fb006fac9abfe831df1f54abef1ac85cf03f8c0e334f437fc5",
-    "zh:b2d4ef885ecc97b2e577e5ee99d9c51237aaa903a6cdf54fc16dc24922521a2d",
-    "zh:c90a853e5eb6873fc3470016f2b91a73ea564a6b2c05b5869527b9fd7a8ae799",
-    "zh:cbd57379966e609d9a600dc89783b41ac64601c13b87ca3a5b0b5be254181e2d",
-    "zh:e6e538fe5ebd296a7a2325095bfad34148fe043e5219ea6f067f25f915bf881d",
+    "h1:STVDjE6YLwENYm8+mEY18hlrofEMc8yQvXj2lTeXTU4=",
   ]
 }

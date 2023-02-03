@@ -4,12 +4,12 @@ zone: europe-west3-a
 secondary_zone: europe-west3-b
 
 # gcs_prefix builds root folder for tf state for the entire stack
-gcs_bucket: terraform-wg-ci
+gcs_bucket: terraform-ard-wg-ci
 gcs_prefix: concourse
 
 # DNS record for your Concourse URL https://<dns_record>.<dns_zone>.dns_domain
 dns_record: concourse
-dns_zone: app-runtime-deployments
+dns_zone: wg-ard
 dns_domain: ci.cloudfoundry.org
 
 # Project's resource names are build off GKE name for scaling purposes
@@ -45,7 +45,8 @@ sql_instance_backup_location: eu
 sql_instance_disk_size: 38
 
 # Other GKE vars
-gke_controlplane_version: 1.23.8-gke.1900
+# gke versions: see https://cloud.google.com/kubernetes-engine/docs/release-notes
+gke_controlplane_version: 1.24.8-gke.2000
 gke_cluster_ipv4_cidr: 10.104.0.0/14
 gke_services_ipv4_cidr_block: 10.108.0.0/20
 gke_master_ipv4_cidr_block: 172.16.0.32/28
