@@ -59,8 +59,12 @@ gke_default_pool_ssd_count: 0
 # typical config for concourse worker is n2-standard-4 and ssd_count: 1
 # note: economy e2-standard machine can't use local ssd drives
 gke_workers_pool_machine_type: n2-standard-4
-gke_workers_pool_node_count: 6
-gke_workers_pool_autoscaling_max: 8
+# note: number of worker pods is constant and equal to number of nodes:
+# https://github.com/cloudfoundry/app-runtime-interfaces-infrastructure/blob/0bcc22801133a968259d31a165bb36001b1becfe/terraform-modules/concourse/app/concourse.tf#L34
+# wouldn't work well for Concourse workers (deleted pods cause orange jobs)
+gke_workers_pool_node_count: 16
+# horizontal pod autoscaling is not enabled, so there will be no node autoscaling -> set autoscaling_max to node_count
+gke_workers_pool_autoscaling_max: 16
 gke_workers_pool_ssd_count: 1
 
 # low number of preallocated ports will impact networking for heavy concourse pipelines
