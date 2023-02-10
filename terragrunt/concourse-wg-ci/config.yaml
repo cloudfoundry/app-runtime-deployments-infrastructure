@@ -62,9 +62,9 @@ gke_workers_pool_machine_type: n2-standard-4
 # note: number of worker pods is constant and equal to number of nodes:
 # https://github.com/cloudfoundry/app-runtime-interfaces-infrastructure/blob/0bcc22801133a968259d31a165bb36001b1becfe/terraform-modules/concourse/app/concourse.tf#L34
 # wouldn't work well for Concourse workers (deleted pods cause orange jobs)
-gke_workers_pool_node_count: 16
+gke_workers_pool_node_count: 8
 # horizontal pod autoscaling is not enabled, so there will be no node autoscaling -> set autoscaling_max to node_count
-gke_workers_pool_autoscaling_max: 16
+gke_workers_pool_autoscaling_max: 8
 gke_workers_pool_ssd_count: 1
 
 # low number of preallocated ports will impact networking for heavy concourse pipelines
