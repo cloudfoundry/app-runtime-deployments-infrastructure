@@ -18,7 +18,7 @@ The CredHub certificate is currently only valid for 30 days. When it expires, yo
 Get "https://credhub.concourse.svc.cluster.local:9000/api/v1/data?name-like=%2Fconcourse%2Fmain%2Fcf-deployment%2Fard_wg_gitbot_ssh_key": x509: certificate has expired or is not yet valid
 ```
 
-To recreate the certificates, apply the workaround described in [https://github.com/cloudfoundry/app-runtime-interfaces-infrastructure/issues/61]:
+To recreate the certificates, apply the workaround described in https://github.com/cloudfoundry/app-runtime-interfaces-infrastructure/issues/61:
 ```
 gcloud auth login
 gcloud config set project cf-deployments-wg
