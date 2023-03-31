@@ -24,5 +24,6 @@ gcloud auth login
 gcloud config set project cf-deployments-wg
 gcloud container clusters get-credentials wg-ci --region europe-west3-a
 kubectl cluster-info
+kubectl -n concourse get pods # search credhub pod
 kubectl -n concourse delete pod credhub-abc-xyz
 ```
