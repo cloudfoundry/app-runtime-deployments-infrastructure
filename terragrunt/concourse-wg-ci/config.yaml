@@ -28,13 +28,14 @@ concourse_helm_version: "17.1.0"
 #  infra: "git@github.com:cloudfoundry/app-autoscaler-release.git//ci/terraform-modules/concourse/infra?ref=new-concourse"
 #  infra: "../../..//terraform-modules//concourse/infra"
 tf_modules:
-  infra: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/infra?ref=1.4.0"
-  backend: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/backend?ref=1.4.0"
-  app: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/app?ref=1.4.0"
-  dr_create: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/dr_create?ref=1.4.0"
-  dr_restore: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/dr_restore?ref=1.4.0"
-  e2e_test: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/e2e_test?ref=1.4.0"
-  secret_rotation_postgresql: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/secret_rotation_postgresql?ref=1.4.0"
+  infra: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/infra?ref=1.5.0"
+  backend: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/backend?ref=1.5.0"
+  app: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/app?ref=1.5.0"
+  dr_create: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/dr_create?ref=1.5.0"
+  dr_restore: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/dr_restore?ref=1.5.0"
+  e2e_test: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/e2e_test?ref=1.5.0"
+  secret_rotation_postgresql: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/secret_rotation_postgresql?ref=1.5.0"
+  automatic_certificate_regeneration: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/automatic_certificate_regeneration?ref=1.5.0"
 
 # ---------------------------------------------------------
 # In most cases settings below are safe to keep as defaults
@@ -114,3 +115,7 @@ wg_ci_cnrm_service_account_permissions: [
     "cloudsql.databases.list",
     "cloudsql.databases.update"
   ]
+
+# list of certificates that shall be automatically renewed every month
+# enter as one string with a comma-separated list of CredHub certificate names
+certificates_to_regenerate: "/concourse/main/hermione_lb,/concourse/main/snape_lb,/concourse/main/smoke-tests_lb"
