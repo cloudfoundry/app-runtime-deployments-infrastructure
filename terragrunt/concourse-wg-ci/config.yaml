@@ -118,4 +118,4 @@ wg_ci_cnrm_service_account_permissions: [
 
 # list of certificates that shall be automatically renewed every month
 # enter as one string with a comma-separated list of CredHub certificate names
-certificates_to_regenerate: "/concourse/main/luna_lb,/concourse/main/luna-iso_lb,/concourse/main/hermione_lb,/concourse/main/snape_lb,/concourse/main/smoke-tests_lb"
+certificates_to_regenerate: "/concourse/main/luna_lb,/concourse/main/luna-iso_lb,/concourse/main/hermione_lb,/concourse/main/snape_lb,/concourse/main/smoke-tests_lb,/concourse/main/bellatrix_lb"
