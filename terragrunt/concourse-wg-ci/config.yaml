@@ -21,21 +21,22 @@ concourse_github_mainTeam: "cloudfoundry:wg-app-runtime-deployments"
 concourse_github_mainTeamUser: ""
 
 # Concourse helm chart
-concourse_helm_version: "17.1.0"
+concourse_helm_version: "17.4.0"
+concourse_container_placement_strategy: "fewest-build-containers"
 
 # Module sources for the stack - git or local
 # ie.
 #  infra: "git@github.com:cloudfoundry/app-autoscaler-release.git//ci/terraform-modules/concourse/infra?ref=new-concourse"
 #  infra: "../../..//terraform-modules//concourse/infra"
 tf_modules:
-  infra: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/infra?ref=1.5.0"
-  backend: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/backend?ref=1.5.0"
-  app: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/app?ref=1.5.0"
-  dr_create: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/dr_create?ref=1.5.0"
-  dr_restore: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/dr_restore?ref=1.5.0"
-  e2e_test: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/e2e_test?ref=1.5.0"
-  secret_rotation_postgresql: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/secret_rotation_postgresql?ref=1.5.0"
-  automatic_certificate_regeneration: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/automatic_certificate_regeneration?ref=1.5.0"
+  infra: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/infra?ref=1.7.0"
+  backend: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/backend?ref=1.7.0"
+  app: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/app?ref=1.7.0"
+  dr_create: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/dr_create?ref=1.7.0"
+  dr_restore: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/dr_restore?ref=1.7.0"
+  e2e_test: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/e2e_test?ref=1.7.0"
+  secret_rotation_postgresql: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/secret_rotation_postgresql?ref=1.7.0"
+  automatic_certificate_regeneration: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/automatic_certificate_regeneration?ref=1.7.0"
 
 # ---------------------------------------------------------
 # In most cases settings below are safe to keep as defaults
@@ -47,7 +48,7 @@ sql_instance_disk_size: 38
 
 # Other GKE vars
 # gke versions: see https://cloud.google.com/kubernetes-engine/docs/release-notes
-gke_controlplane_version: 1.24.8-gke.2000
+gke_controlplane_version: 1.30.9-gke.1127000
 gke_cluster_ipv4_cidr: 10.104.0.0/14
 gke_services_ipv4_cidr_block: 10.108.0.0/20
 gke_master_ipv4_cidr_block: 172.16.0.32/28
@@ -67,6 +68,8 @@ gke_workers_pool_node_count: 8
 # horizontal pod autoscaling is not enabled, so there will be no node autoscaling -> set autoscaling_max to node_count
 gke_workers_pool_autoscaling_max: 8
 gke_workers_pool_ssd_count: 1
+gke_workers_min_memory: 4Gi
+gke_workers_max_memory: 12Gi
 
 # low number of preallocated ports will impact networking for heavy concourse pipelines
 gke_cloud_nat_min_ports_per_vm: 16384
