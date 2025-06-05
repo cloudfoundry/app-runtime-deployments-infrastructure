@@ -52,26 +52,6 @@ provider "registry.opentofu.org/hashicorp/kubernetes" {
   ]
 }
 
-provider "registry.opentofu.org/vmware-tanzu/carvel" {
-  version = "0.11.2"
-  hashes = [
-    "h1:lpfmYk4NK57c4dBiRvzMQ1ki5GraCT13ChnBXsYZChM=",
-    "zh:0df2ed7631a8c2864d61e3a351cd02faf0b36264e0d92074e9c352bd12bde93d",
-    "zh:201b68accff4f3835591c36e4b5ac16fcbbc2749f0570607502cbc3e5709a2df",
-    "zh:25dba84cd01f9bb44978246509ed9f25dd65dc5a7a0bfaf8b08920620365a078",
-    "zh:535188456d5cf6b996f9a3db03ec0f920464492a77dcd1b0ba0c76234ad37e35",
-    "zh:56cf900e40d3b0ace54e522455101af5423634b4ae94d5d3844fb8a7c3b34f92",
-    "zh:64178282853a2f0fb36612f0ee525b0b84b456acdb9bf1171becd914a180654d",
-    "zh:65c4589e709672b6b087b954d8d2ef880dae0a71fa3157833960634dece50140",
-    "zh:a34707ed7c3887750967f41f83e994273af4febe772b9fec097db1b5aa45b6e7",
-    "zh:a422c526d2f8e6dea207607e65f273b0802067b390e6ad3fa2e1890beee6c9dc",
-    "zh:a6778e77093c5a480db7bc1de7e3af661049b151f55dc50c965cf280226d735b",
-    "zh:b735a49ebb8efa19b59f617ecb5d7b1bd98b20e340e8bc612867205f46377cbd",
-    "zh:c307685c882ddee930e52e9f03e393a0c9eecd1300d5a57dff95fde9c77e7454",
-    "zh:c5a06db70fd528baafb492d0507a71a2924e7ebf7a92f3d16da2c2cf76c13edb",
-  ]
-}
-
 provider "registry.terraform.io/carvel-dev/carvel" {
   version = "0.11.2"
   hashes = [
