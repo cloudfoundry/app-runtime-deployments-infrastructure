@@ -1,7 +1,7 @@
 project: cf-deployments-wg
-region: europe-west3
-zone: europe-west3-a
-secondary_zone: europe-west3-b
+region: us-east1
+zone: us-east1-b
+secondary_zone: us-east1-c
 
 # gcs_prefix builds root folder for tf state for the entire stack
 gcs_bucket: terraform-ard-wg-ci
@@ -29,26 +29,30 @@ concourse_container_placement_strategy: "fewest-build-containers"
 #  infra: "git@github.com:cloudfoundry/app-autoscaler-release.git//ci/terraform-modules/concourse/infra?ref=new-concourse"
 #  infra: "../../..//terraform-modules//concourse/infra"
 tf_modules:
-  infra: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/infra?ref=1.8.0"
-  backend: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/backend?ref=1.8.0"
-  app: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/app?ref=1.8.0"
-  dr_create: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/dr_create?ref=1.8.0"
-  dr_restore: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/dr_restore?ref=1.8.0"
-  e2e_test: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/e2e_test?ref=1.8.0"
-  secret_rotation_postgresql: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/secret_rotation_postgresql?ref=1.8.0"
-  automatic_certificate_regeneration: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/automatic_certificate_regeneration?ref=1.8.0"
+  infra: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/infra?ref=1.10.0"
+  backend: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/backend?ref=1.10.0"
+  app: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/app?ref=1.10.0"
+  dr_create: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/dr_create?ref=1.10.0"
+  dr_restore: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/dr_restore?ref=1.10.0"
+  e2e_test: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/e2e_test?ref=1.10.0"
+  secret_rotation_postgresql: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/secret_rotation_postgresql?ref=1.10.0"
+  automatic_certificate_regeneration: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/automatic_certificate_regeneration?ref=1.10.0"
 
 # ---------------------------------------------------------
 # In most cases settings below are safe to keep as defaults
 # ---------------------------------------------------------
 # SQL
+database_version: "POSTGRES_16"
+db_terraform_deletion_protection: true
+db_engine_level_deletion_protection: true
 sql_instance_tier: db-custom-1-4096
 sql_instance_backup_location: eu
 sql_instance_disk_size: 38
 
 # Other GKE vars
+gke_deletion_protection : true
 # gke versions: see https://cloud.google.com/kubernetes-engine/docs/release-notes
-gke_controlplane_version: 1.30.9-gke.1127000
+gke_controlplane_version: "1.32.6-gke.1013000"
 gke_cluster_ipv4_cidr: 10.104.0.0/14
 gke_services_ipv4_cidr_block: 10.108.0.0/20
 gke_master_ipv4_cidr_block: 172.16.0.32/28
