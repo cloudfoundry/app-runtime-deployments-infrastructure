@@ -22,7 +22,7 @@ To recreate the certificates, apply the workaround described in https://github.c
 ```
 gcloud auth login
 gcloud config set project cf-deployments-wg
-gcloud container clusters get-credentials wg-ci --region europe-west3-a
+gcloud container clusters get-credentials wg-ci --region us-east1-b
 kubectl cluster-info
 kubectl -n concourse get pods # search credhub pod
 kubectl -n concourse delete pod credhub-abc-xyz
