@@ -1,40 +1,6 @@
 # This file is maintained automatically by "terraform init".
 # Manual edits may be lost in future updates.
 
-provider "registry.opentofu.org/hashicorp/google" {
-  version = "6.28.0"
-  hashes = [
-    "h1:hhCoMEj9/6utOmTrgRY72yN/nyrEGMFfRRHeBhgkIAg=",
-    "zh:32a8ed6f0860b1a5c8775164983518b74007de8af55b8ee20c92559e4a852301",
-    "zh:450d7d03f59a34b637515454387fc8d9c627bb86f7f186fff0b36d5a262b6e7e",
-    "zh:5316a4ace1ed0402382ed26b4654951b39dd89ab4099cb99cd3e1e1b6476d478",
-    "zh:6d9aa74e5150d3e77604580c99ab1e453c7e0fc4ede15c996f4c9a3735872c7a",
-    "zh:791eaf674a56661ca4be2741893321626a4092b052e2ca00c3fcc58e25f642b8",
-    "zh:8e1444ea4f47a97e315971f37df448dd7e56cc427a57baf1d09ac3638c2ad2f8",
-    "zh:b45b7b758b8c352828ea88d3936a34c6cd62229d0ea671e6c928f80736a1b24b",
-    "zh:bbd58ea7b27f9815be278ef1349dd85e165cab197ee9454d2b965a768704d942",
-    "zh:d3f72c6e6f245f611b057643e778a2252527e19d0f2a47ff28f220ce3b5f5a36",
-    "zh:ddd89825c0947b4b9d92ee79f22c9007a4491b9e1ac501f2a0a5178cbb7d7427",
-  ]
-}
-
-provider "registry.opentofu.org/hashicorp/google-beta" {
-  version = "6.28.0"
-  hashes = [
-    "h1:2ZDrYYCjNGUly452HpQGX9yJzh9NhiVW+1nl3EmbAP0=",
-    "zh:4f7a078de31b610b5db0060090f97cfe11b459386bf05c5b03b6f1b151f8ac0e",
-    "zh:54ae8021eb51f8c08f204ab408d1963fe4406ef636e7355a1e143682a7123b04",
-    "zh:65b654495ba76bdd3254485748bf40fa77c3cf0acec211f6e77293d13b246815",
-    "zh:78e300513a01d5d1983f833e44f57a6e227cb8e9b8a2613242e986752262f326",
-    "zh:7b7d91a5a5e7342b3fe9c67caa3158388edcb713cab66c06229dcdf294a66270",
-    "zh:7e46b54a8dde80a2e36efc3be37b28a6fccce5f0460c8a837acc66c11c17da61",
-    "zh:92fd3ed8c4d864f63bac01e225bd6982e06e475b6eb338e134ad91cef6130bfd",
-    "zh:a8c9b9129b9e8af6e585456cf07b7b0dfea6e32f8c3fae50ba752dfcdb2c6ff1",
-    "zh:d959d377c2e29d6462fe78e240931dda66b1c2f65d4d5162038e82a3aedc92e2",
-    "zh:fe2d7121ab097b9a49c5a3bac4ed8032ecfea033f1f86cc1d8f4bea1e647d605",
-  ]
-}
-
 provider "registry.terraform.io/gavinbunney/kubectl" {
   version = "1.14.0"
   hashes = [

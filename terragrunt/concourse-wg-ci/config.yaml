@@ -23,20 +23,26 @@ concourse_github_mainTeamUser: ""
 # Concourse helm chart
 concourse_helm_version: "18.1.1"
 concourse_container_placement_strategy: "fewest-build-containers"
+# Optional: Set the maximum number of days to retain Concourse build logs.
+# If not set, the default Concourse is configured to feel very snappy!.
+concourse_max_days_to_retain_build_logs: 30
+# Optional: Set the maximum number of build logs to retain.
+# If not set or set to 0, the default Concourse is configured to feel very snappy!.
+concourse_max_build_logs_to_retain: 200
 
 # Module sources for the stack - git or local
 # ie.
 #  infra: "git@github.com:cloudfoundry/app-autoscaler-release.git//ci/terraform-modules/concourse/infra?ref=new-concourse"
 #  infra: "../../..//terraform-modules//concourse/infra"
 tf_modules:
-  infra: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/infra?ref=1.10.0"
-  backend: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/backend?ref=1.10.0"
-  app: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/app?ref=1.10.0"
-  dr_create: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/dr_create?ref=1.10.0"
-  dr_restore: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/dr_restore?ref=1.10.0"
-  e2e_test: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/e2e_test?ref=1.10.0"
-  secret_rotation_postgresql: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/secret_rotation_postgresql?ref=1.10.0"
-  automatic_certificate_regeneration: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/automatic_certificate_regeneration?ref=1.10.0"
+  infra: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/infra?ref=1.12.0"
+  backend: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/backend?ref=1.12.0"
+  app: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/app?ref=1.12.0"
+  dr_create: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/dr_create?ref=1.12.0"
+  dr_restore: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/dr_restore?ref=1.12.0"
+  e2e_test: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/e2e_test?ref=1.12.0"
+  secret_rotation_postgresql: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/secret_rotation_postgresql?ref=1.12.0"
+  automatic_certificate_regeneration: "git@github.com:cloudfoundry/app-runtime-interfaces-infrastructure.git//terraform-modules/concourse/automatic_certificate_regeneration?ref=1.12.0"
 
 # ---------------------------------------------------------
 # In most cases settings below are safe to keep as defaults
